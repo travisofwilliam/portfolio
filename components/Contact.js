@@ -1,13 +1,9 @@
 const Contact = () => {
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-  }
-
   return (
     <div className='container' style={{ marginTop: '25px', textAlign: 'center' }}>
       <h1>Contact</h1>
-      <form onClick={handleSubmit} className="contact-form" action="/success" name="contact" method="POST" netlify >
+      <form className="contact-form" action="/success" name="contact" method="POST" netlify >
         <input type="hidden" name="form-name" value="contact" />
         <div className="form-group">
           <label htmlFor="yourname" >Name</label>
