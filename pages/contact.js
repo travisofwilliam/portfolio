@@ -5,6 +5,8 @@ const Placeholder = () => {
   const sendEmail = (e) => {
     e.preventDefault()
 
+    console.log(e.target)
+
     emailjs.sendForm('service_eyf7ofu', 'template_8293uds', e.target, 'user_hguX7dVSTsDnOIyZs1nd9')
       .then((result) => {
         console.log(result.text)
@@ -28,7 +30,7 @@ const Placeholder = () => {
           <label htmlFor="exampleFormControlTextarea1">Message</label>
           <textarea className="form-control" name="message" rows="3"></textarea>
         </div>
-        <button type="submit" value="send" className="btn btn-primary">Submit</button>
+        <input type="submit" value="Submit" className="btn btn-primary" />
       </form>
     </div>
   )
