@@ -1,5 +1,9 @@
 const Contact = () => {
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
+
   return (
     <div className='container' style={{ marginTop: '25px', textAlign: 'center' }}>
       <h1>Contact</h1>
