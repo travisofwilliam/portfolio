@@ -10,7 +10,7 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault()
 
-    axios.post('/api/send', {
+    axios.post('api/send', {
       senderName,
       senderEmail,
       message
