@@ -2,45 +2,55 @@ const axios = require('axios')
 
 export default (req, res) => {
   const { senderName, senderEmail, message } = req.body
+  const { method } = req
 
-  axios.post('https://api.sendgrid.com/v3/mail/send', {
-    personalizations:
-      [
-        {
-          to: [
+  switch (method) {
+    case 'GET':
+      res.send('GET method not needed')
+      break
+    case 'POST':
+      axios.post('https://api.sendgrid.com/v3/mail/send', {
+        personalizations:
+          [
             {
-              email: "travis.v.williams@gmail.com",
-              name: "Travis Williams"
+              to: [
+                {
+                  email: "travis.v.williams@gmail.com",
+                  name: "Travis Williams"
+                }
+              ],
+              subject: "Test"
             }
           ],
-          subject: "Test"
-        }
-      ],
-    content:
-      [
+        content:
+          [
+            {
+              type: "text/plain",
+              value: message
+            }
+          ],
+        from:
         {
-          type: "text/plain",
-          value: message
+          email: "travis.v.williams@gmail.com",
+          name: "Travis Williams"
+        },
+        reply_to:
+        {
+          email: senderEmail,
+          name: senderName
         }
-      ],
-    from:
-    {
-      email: "travis.v.williams@gmail.com",
-      name: "Travis Williams"
-    },
-    reply_to:
-    {
-      email: senderEmail,
-      name: senderName
-    }
-  }, {
-    headers: {
-      Authorization: 'Bearer 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',
-      'Content-type': 'application/json'
-    }
-  })
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
+      }, {
+        headers: {
+          Authorization: 'Bearer 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',
+          'Content-type': 'application/json'
+        }
+      })
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+      break
+    default:
+      res.setHeader('Allow', ['GET', 'POST'])
+  }
 
   res.send('it worked')
 }
