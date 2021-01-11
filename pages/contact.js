@@ -1,50 +1,44 @@
-import { useState } from 'react'
-const axios = require('axios')
+// import { useState } from 'react'
+// const axios = require('axios')
 
 const Contact = () => {
 
-  const [senderName, setSenderName] = useState('')
-  const [senderEmail, setSenderEmail] = useState('')
-  const [message, setMessage] = useState('')
+  // const [senderName, setSenderName] = useState('')
+  // const [senderEmail, setSenderEmail] = useState('')
+  // const [message, setMessage] = useState('')
 
-  const sendEmail = (e) => {
-    e.preventDefault()
+  // const sendEmail = (e) => {
+  //   e.preventDefault()
 
-    axios.post('api/send', {
-      senderName,
-      senderEmail,
-      message
-    })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
+  //   axios.post('api/send', {
+  //     senderName,
+  //     senderEmail,
+  //     message
+  //   })
+  //     .then(function (response) {
+  //       console.log(response);
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+  // }
 
 
   return (
     <div className='container' style={{ marginTop: '25px', textAlign: 'center' }}>
       <h1>Contact</h1>
-      <form onSubmit={sendEmail} className="contact-form" name="contact" >
+      <form className="contact-form" name="contact" action="https://getform.io/f/d0774737-92e3-4378-9237-c3928976762b" method="POST" >
         <div className="form-group">
           <label>Name</label>
-          <input onChange={(e) => {
-            setSenderName(e.target.value)
-          }} required type="text" className="form-control" placeholder="Name" name="name" id="yourname" />
+          <input required type="text" className="form-control" placeholder="Name" name="name" id="yourname" />
         </div>
         <div className="form-group">
           <label>Email address</label>
-          <input onChange={(e) => {
-            setSenderEmail(e.target.value)
-          }} required type="email" className="form-control" placeholder="name@example.com" name="email" id="youremail" />
+          <input required type="email" className="form-control" placeholder="name@example.com" name="email" id="youremail" />
         </div>
         <div className="form-group">
           <label>Message</label>
-          <textarea onChange={(e) => {
-            setMessage(e.target.value)
-          }} required className="form-control" name="message" id="yourmessage" rows="3"></textarea>
+          <textarea required type="text" className="form-control" name="message" id="yourmessage" rows="3"></textarea>
         </div>
         <button type="submit" className="btn btn-primary">Submit</button>
       </form>
