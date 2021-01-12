@@ -1,4 +1,4 @@
-import laptopSelfie from '../img/laptopselfie.jpg'
+import selfie from '../img/headshot.jpg'
 
 const Bio = () => {
   return (
@@ -6,7 +6,7 @@ const Bio = () => {
       <h1>About Me</h1>
       <div style={{ display: 'block', textAlign: 'center', margin: '25px' }}>
         <img
-          src={laptopSelfie}
+          src={selfie}
           style={{
             height: '250px',
             width: '250px',
