@@ -11,6 +11,9 @@ const Navbar = (props) => {
           <Link href='/bio' className='nav-item'>
             <a className='nav-link'>Bio</a>
           </Link>
+          <Link href='/videos' className='nav-item'>
+            <a className='nav-link'>Videos</a>
+          </Link>
           <Link href='https://github.com/travisofwilliam' className='nav-item'>
             <a target='_blank' className='nav-link'>GitHub</a>
           </Link>
