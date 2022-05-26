@@ -27,7 +27,7 @@ const Contact = () => {
   return (
     <div className='container' style={{ marginTop: '25px', textAlign: 'center' }}>
       <h1>Contact</h1>
-      <form className="contact-form" name="contact" action="https://getform.io/f/d0774737-92e3-4378-9237-c3928976762b" method="POST" >
+      <form className="contact-form" name="contact" action="https://getform.io/f/43a84fd6-025f-49f4-a642-b94e8cb7fdda" method="POST" >
         <div className="form-group">
           <label>Name</label>
           <input required type="text" className="form-control" placeholder="Name" name="name" id="yourname" />
